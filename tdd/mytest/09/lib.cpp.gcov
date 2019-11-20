@@ -1,0 +1,40 @@
+        -:    0:Source:lib.cpp
+        -:    0:Graph:lib.gcno
+        -:    0:Data:lib.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "lib.h"
+        -:    2:
+function _Z6libfn1v called 1 returned 100% blocks executed 100%
+        1:    3:int libfn1()
+        1:    3-block  0
+        -:    4:{
+        1:    5:    int a =5;
+        1:    6:    a++;
+        1:    7:    return (a);
+        1:    7-block  0
+unconditional  0 taken 1
+        -:    8:}
+        -:    9:
+function _Z6libfn2i called 1 returned 100% blocks executed 60%
+        1:   10:int libfn2( int b)
+        1:   10-block  0
+        -:   11:{
+        1:   12:    if (b>10)
+        1:   12-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:   13:    {
+    #####:   14:        libfn1();
+    $$$$$:   14-block  0
+call    0 never executed
+    #####:   15:        return(b);
+unconditional  0 never executed
+        -:   16:    }
+        -:   17:    else
+        1:   18:        return(0);
+        1:   18-block  0
+unconditional  0 taken 1
+        -:   19:}
+        -:   20:
+        -:   21:
