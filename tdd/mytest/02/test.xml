@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="0" disabled="0" errors="0" timestamp="2017-12-20T11:25:35" time="0" name="AllTests">
+  <testsuite name="FactorialTest" tests="2" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="withPositiveNumbers" status="run" time="0" classname="FactorialTest" />
+    <testcase name="withZero" status="run" time="0" classname="FactorialTest" />
+  </testsuite>
+</testsuites>

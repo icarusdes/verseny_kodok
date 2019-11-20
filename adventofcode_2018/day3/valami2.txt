@@ -1,0 +1,74 @@
+==18648== Memcheck, a memory error detector
+==18648== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==18648== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==18648== Command: ./a.out
+==18648== 
+Current sum is 1
+Current sum is 2
+Current sum is 4
+Current sum is 5
+Current sum is 10
+Current sum is 11
+Current sum is 23
+Current sum is 25
+Current sum is 26
+Current sum is 54
+Current sum is 57
+Current sum is 59
+Current sum is 122
+Current sum is 133
+Current sum is 142
+Current sum is 147
+Current sum is 304
+Current sum is 330
+Current sum is 351
+Current sum is 362
+Current sum is 747
+Current sum is 806
+Current sum is 880
+Current sum is 931
+Current sum is 957
+Current sum is 1968
+Current sum is 2105
+Current sum is 2275
+Current sum is 2391
+Current sum is 2450
+Current sum is 5022
+Current sum is 5336
+Current sum is 5733
+Current sum is 6155
+Current sum is 6444
+Current sum is 6591
+Current sum is 13486
+Current sum is 14267
+Current sum is 15252
+Current sum is 16295
+Current sum is 17008
+Current sum is 17370
+Current sum is 35487
+Current sum is 37402
+Current sum is 39835
+Current sum is 42452
+Current sum is 45220
+Current sum is 47108
+Current sum is 48065
+Current sum is 98098
+Current sum is 103128
+Current sum is 109476
+Current sum is 116247
+Current sum is 123363
+Current sum is 128204
+Current sum is 130654
+Current sum is 266330
+Current sum is 279138
+Current sum is 295229
+Current sum is 312453
+==18648== 
+==18648== HEAP SUMMARY:
+==18648==     in use at exit: 0 bytes in 0 blocks
+==18648==   total heap usage: 162 allocs, 162 frees, 85,352 bytes allocated
+==18648== 
+==18648== All heap blocks were freed -- no leaks are possible
+==18648== 
+==18648== For counts of detected and suppressed errors, rerun with: -v
+==18648== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
