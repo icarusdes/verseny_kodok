@@ -1,0 +1,16 @@
+digraph day_14 {
+	ORE -> A;
+	ORE -> B;
+	ORE -> C;
+	A -> AB;
+	B -> AB;
+	B -> BC;
+	C -> BC;
+	C -> CA;
+	A -> CA;
+	AB -> FUEL;
+	BC -> FUEL;
+	CA -> FUEL;
+	 {rank=same; A B C }
+	 {rank=same; AB BC CA }
+}

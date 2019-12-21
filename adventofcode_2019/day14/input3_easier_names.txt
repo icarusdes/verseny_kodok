@@ -1,0 +1,9 @@
+157 ORE => 5 A
+165 ORE => 6 B
+179 ORE => 7 C
+177 ORE => 5 D
+165 ORE => 2 F
+7 B, 7 C => 2 BC
+3 B, 7 A, 5 D, 10 C => 8 ABCD
+12 D, 1 F, 8 C => 9 CDF
+44 BC, 5 ABCD, 1 CDF, 29 A, 9 F, 48 D => 1 FUEL
