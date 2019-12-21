@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <sstream>
 
-bool logging = false; 
+bool logging = true; 
 
 int main(int argc, char ** argv) {
 

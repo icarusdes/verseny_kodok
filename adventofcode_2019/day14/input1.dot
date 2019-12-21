@@ -1,0 +1,13 @@
+digraph  graphname {
+        node [shape=box style=filled]
+		ORE -> A; 
+		ORE -> B;
+		A -> C;
+		B -> C;
+        A -> D; 
+        C -> D; 
+        A -> E;
+        D -> E; 
+        A -> FUEL; 
+        E -> FUEL; 
+}

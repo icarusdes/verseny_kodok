@@ -1,0 +1,22 @@
+digraph day_14 {
+	ORE -> NZVS;
+	ORE -> DCFZ;
+	XJWVT -> FUEL;
+	KHKGT -> FUEL;
+	QDVJ -> FUEL;
+	NZVS -> FUEL;
+	GPVTF -> FUEL;
+	HKGWZ -> FUEL;
+	HKGWZ -> QDVJ;
+	GPVTF -> QDVJ;
+	PSHF -> QDVJ;
+	ORE -> PSHF;
+	ORE -> HKGWZ;
+	DCFZ -> XJWVT;
+	PSHF -> XJWVT;
+	ORE -> GPVTF;
+	DCFZ -> KHKGT;
+	NZVS -> KHKGT;
+	HKGWZ -> KHKGT;
+	PSHF -> KHKGT;
+}

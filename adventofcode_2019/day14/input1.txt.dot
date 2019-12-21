@@ -1,0 +1,12 @@
+digraph day 14 {
+	ORE -> A;
+	ORE -> B;
+	A -> C;
+	B -> C;
+	A -> D;
+	C -> D;
+	A -> E;
+	D -> E;
+	A -> FUEL;
+	E -> FUEL;
+}

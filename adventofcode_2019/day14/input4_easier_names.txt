@@ -1,0 +1,12 @@
+139 ORE => 4 A
+144 ORE => 7 B
+145 ORE => 6 C
+176 ORE => 6 D
+17 A, 3 B => 8 AB
+1 A => 8 AA
+1 D, 6 C => 4 CD
+22 D, 37 C => 5 CD2
+2 AB, 7 CD2, 2 AA, 11 C => 1 STKFG
+5 C, 7 CD, 2 CD2, 2 AB, 19 AA => 3 HVMC
+5 D, 7 C, 9 AB, 37 AA => 6 GNMV
+53 STKFG, 6 C, 46 D, 81 HVMC, 68 AA, 25 GNMV => 1 FUEL
