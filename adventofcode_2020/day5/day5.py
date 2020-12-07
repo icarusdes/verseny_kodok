@@ -10,7 +10,7 @@ def getRowAndColumn(line):
     horizontalRegionLength = 8
     horizontalRegionActual = 0
     for char in line: 
-        if char == "B" or char == "F": 
+        if char in "BF": 
             if char == "B":
                 verticalRegionActual += verticalRegionLength / 2
             verticalRegionLength /= 2
