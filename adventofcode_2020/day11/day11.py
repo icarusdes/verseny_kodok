@@ -17,13 +17,7 @@ width = len(seats[0])
 
 last_seats = []
 
-# for seat_row in seats: 
-#     print(seat_row)
-
-# print() 
-
 dirs = ["w", "nw", "n", "ne", "e", "se", "s", "sw"]
-
 dir_shifts = {
     "w" : [-1, 0], 
     "nw" : [-1, -1],
@@ -45,12 +39,22 @@ def get_occupied_sets_in_every_direction(seats, x, y, stop_after_first = True):
         while True: 
             cur_x += shift[0]
             cur_y += shift[1]
-            if x < 0 or x >= width or y < 0 or y >= height:
+            if cur_x < 0 or cur_x >= width or cur_y < 0 or cur_y >= height:
                 break
-            is_occupied = seats[cur_y][cur_x] == 2
-            if is_occupied or stop_after_first: 
+            if seats[cur_y][cur_x] == 1: #this is an empty seat
                 break
-        occupied += is_occupied == True
+            elif seats[cur_y][cur_x] == 2: 
+                is_occupied = True
+                break
+            if stop_after_first: 
+                break
+        occupied_number += is_occupied == True
+    return occupied_number
+
+is_part_one = int(sys.argv[2]) == 1
+
+stop_after_first = is_part_one #is this the first part of the question or second
+occupied_near_limit = 4 if is_part_one else 5
 
 while (seats != last_seats): 
     last_seats = copy.deepcopy(seats)
@@ -58,31 +62,11 @@ while (seats != last_seats):
         for j in range(width): 
             if last_seats[i][j] == 0:
                 continue
-            occupied_near = 0
-            if i > 0: 
-                if j > 0: 
-                    occupied_near += last_seats[i-1][j-1] == 2
-                occupied_near += last_seats[i-1][j] == 2
-                if j+1 < width: 
-                    occupied_near += last_seats[i-1][j+1] == 2
-            if j > 0: 
-                occupied_near += last_seats[i][j-1] == 2
-            if j+1 < width: 
-                occupied_near += last_seats[i][j+1] == 2
-            if i+1 < height: 
-                if j > 0: 
-                    occupied_near += last_seats[i+1][j-1] == 2
-                occupied_near += last_seats[i+1][j] == 2
-                if j+1 < width: 
-                    occupied_near += last_seats[i+1][j+1] == 2
+            occupied_near = get_occupied_sets_in_every_direction(last_seats, j, i, stop_after_first)            
             if last_seats[i][j] == 1 and occupied_near == 0: 
                 seats[i][j] = 2
-            if seats[i][j] == 2 and occupied_near >= 4: 
+            if seats[i][j] == 2 and occupied_near >= occupied_near_limit: 
                 seats[i][j] = 1
-    
-    # for seat_row in seats: 
-    #     print(seat_row)
-    # print()
 
 occupied = sum([sum([c == 2 for c in line]) for line in seats])
 print(occupied)
