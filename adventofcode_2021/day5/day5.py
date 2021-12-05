@@ -6,20 +6,15 @@ lines = input_file.read().splitlines()
 
 vents = {}
 
+# https://docs.python.org/3.0/whatsnew/3.0.html#ordering-comparisons 
+def cmp(a, b):
+    return (a > b) - (a < b) 
+
 for line in lines:  
     x1, y1, x2, y2 = list(map(int, re.split(" -> |,", line)))
 
-    x_inc = 0
-    if (x1 > x2): 
-        x_inc = -1
-    elif (x1 < x2): 
-        x_inc = 1
-
-    y_inc = 0
-    if (y1 > y2):
-        y_inc = -1 
-    elif (y2 > y1): 
-        y_inc = 1  
+    x_inc = cmp(x2, x1)
+    y_inc = cmp(y2, y1)
  
     dist = abs(x1-x2) if x_inc != 0 else abs(y1-y2)
 
