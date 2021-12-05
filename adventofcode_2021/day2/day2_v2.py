@@ -18,6 +18,6 @@ for line in lines:
         if (y < 0): 
             print("He?")
     else: 
-        print ("Bay van")
+        print ("Baj van")
 
 print( x* y)
