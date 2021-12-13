@@ -18,12 +18,24 @@ def set_as_sorted_list(s):
     l.sort()
     return l
 
+def find_three_and_two(set_of_two, other_numbers): 
+    as_list = list(set_of_two) 
+    found_in_every = True
+    for digit in other_numbers: 
+        if as_list[0] not in digit: 
+            found_in_every = False
+    if found_in_every: 
+        _three_times, _two_times = as_list
+    else: 
+        _two_times, _three_times = as_list
+    return set(_three_times), set(_two_times)
+
 def decode_signals(signals): 
     sorted_by_digit_num = {}
     for signal in signals:
-        sorted = list(signal)
-        sorted.sort() 
+        sorted = set_as_sorted_list(signal)
         segment_num = len(sorted)
+        sorted_by_digit_num.get(segment_num, list()).append(set(sorted))
         if segment_num in sorted_by_digit_num:
             sorted_by_digit_num[segment_num].append(set(sorted))
         else: 
@@ -32,51 +44,12 @@ def decode_signals(signals):
     _a = sorted_by_digit_num[3][0] - sorted_by_digit_num[2][0]
     _cf = sorted_by_digit_num[3][0] & sorted_by_digit_num[2][0]
     _bd = sorted_by_digit_num[4][0] - sorted_by_digit_num[2][0]
-    as_list = list(_bd) 
-    found_in_every = True
-    for digit in sorted_by_digit_num[6]: 
-        if as_list[0] not in digit: 
-            found_in_every = False
-    if found_in_every: 
-        _b = set(as_list[0]) 
-        _d = set(as_list[1])
-    else: 
-        _b = set(as_list[1])
-        _d = set(as_list[0])
-
-    as_list = list(_cf) 
-    found_in_every = True
-    for digit in sorted_by_digit_num[6]: 
-        if as_list[0] not in digit: 
-            found_in_every = False
-    if found_in_every: 
-        _f = set(as_list[0]) 
-        _c = set(as_list[1])
-    else: 
-        _f = set(as_list[1])
-        _c = set(as_list[0])
+    _b, _d = find_three_and_two(_bd, sorted_by_digit_num[6])
+    _f, _c = find_three_and_two(_cf, sorted_by_digit_num[6])
 
     _eg = sorted_by_digit_num[7][0] - _a - _b - _c - _d - _f
 
-    as_list = list(_eg) 
-    found_in_every = True
-    for digit in sorted_by_digit_num[6]: 
-        if as_list[0] not in digit: 
-            found_in_every = False
-    if found_in_every: 
-        _g = set(as_list[0]) 
-        _e = set(as_list[1])
-    else: 
-        _g = set(as_list[1])
-        _e = set(as_list[0])
-
-    # print(f"a is {_a}")
-    # print(f"b is {_b}")
-    # print(f"c is {_c}")
-    # print(f"d is {_d}")
-    # print(f"e is {_e}")
-    # print(f"f is {_f}")
-    # print(f"g is {_g}")
+    _g, _e = find_three_and_two(_eg, sorted_by_digit_num[6])
 
     digits = {
         "".join(set_as_sorted_list( _a | _b | _c | _e | _f | _g)) : 0, 
