@@ -1,0 +1,25 @@
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+
+# Top-most EditorConfig file
+root = true
+
+# All files
+[*]
+charset = utf-8
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Python files
+[*.py]
+indent_style = space
+indent_size = 4
+
+# C++ files
+[*.cpp, *.h]
+indent_style = space
+indent_size = 4
+
+# preserve file format for input files
+[*.txt]
+insert_final_newline = false
